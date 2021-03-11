@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bookstore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAADq7u8AycztAEBikADb3uMAyd3vAN7k6wDUhDIAwb3FAKiyxAChjagAJIPrANHZ2QA3rv4AEX/vAMrOzwDY3OEAzN/yACEbpAAlvXEAUtV2AC2d/QCLJXsA9t7rAMrS3QAT4aoAzczVANjh5ADUH4kAu8LRAB7FdAAiF5cAyuL7AObt/AAqrVQA3yeDAP/7/QCerbsA1NjdAL7JxgD//v0A4ubnAAdq0QD9/PsAVQ1fACSA5QCkx/cA3NvVAKanvADhfiwAfpm8ANjY3gDvfBAABDamALwxiwAxKckADid1ACsv+wAiJPEA2tjOACcqxwD/+/8A///8AImIwwDTfysAevvLAP76+gAAJE0Ao6/AALjg/AC4xL4AG9SHACOA5wAVEsoA34MoAN7e3wAUxnUAInrXALjr1QCdEHcAGoL7AOPq7wDV2+AA4YEuAL/IzAC8wMoApiZzAELwowDQ2d4AkJytAOh/GwBLW5AAh9D7AK6/zgA1m/8A4+foANHg7ADS4OwAHhnIAJmhuADl5+gA0dfcAKe3xADf4uYA7BSLABcMkgD+/P8ADmfNAJspfQDI0dUA3HkdAP///wDqgR8A4urpAP39/QAKeNgA630aAMfQyAA4jPkA+Pz4ACN94gASf/YAGHjgAN3h4gA5e+cA9Pb5AKWzyQC2IXsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5uKnJbDBRddR9pI25ubnF3LEcKGgBRZF56bAtubm5ueU94DTEIXBxlQ31Ubm5ubjBJUj8GBWBfBBBubm5ubm4zc1ltbw4lD1dTbm5ubm5ubksdEiETVkBNdm5ubm5ubm4iGEYuOnRFJlUWbm5ubm5uZxt+azUkWGIvbm5ubm5ubiBhaCtOCRUeETZubm5ubm5uAkg7AQMyYyh8bm5ubm5ubilCOBk+OVpBPG5ubm5ubm49ajQ3ey1QSm5ubm5ubm5ubidwZhcHTERubm5ubm5ubm5ubm5ubm5ubm5ubgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bookstore</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <vc:cart-summary />
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <main role="main" class="pb-3">
+            <!-- Eveything goes below here-->
+            <h1 class="display-4">Welcome to the Bookstore!</h1>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-auto">
+                        <div><vc:navigation-menu></vc:navigation-menu></div>
+                    </div>
+                    <div class="col-8">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <!-- Eveything goes above here-->
+
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+
+        <div class="container">
+            &copy; 2021 - Bookstore
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

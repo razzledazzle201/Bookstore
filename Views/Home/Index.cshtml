@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model BooklistViewModel
+
+
+@foreach (var b in Model.Books)
+{   // Pull the html from the BookSummary shared view where the variable b is our "Model"
+    <partial name="BookSummary" model="b" />
+    <br />
+}
+
+<div page-model="@Model.PagingInfo"
+     page-classes-enabled="true"
+     page-class="btn"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-secondary"
+     page-url-category="@Model.BookCategory"
+     class="btn-group pull-right m-1"></div>
